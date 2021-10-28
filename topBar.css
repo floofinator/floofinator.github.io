@@ -1,0 +1,42 @@
+.topbar{
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    padding: 8px;
+    overflow-x: hidden;
+    display: flex;
+    background-color: white;
+    border-width: 8px;
+    border-bottom-style: solid;
+    border-right-style: solid;
+    border-color: black;
+    border-bottom-right-radius: 32px;
+}
+.topbar a{
+    border-radius: 16px;
+    background-color: black;
+    padding: 8px;
+    margin: 8px;
+    text-align: center;
+    font-size: 32px;
+    font-family: 'Fredoka One', sans-serif;
+}
+.topbar a:link{
+    color: white;
+    text-decoration: none;
+}
+.topbar a:visited{
+    color: white;
+    text-decoration: none;
+}
+.topbar a:hover{
+    color: black;
+    background-color: white;
+    text-decoration: none;
+}
+.topbar a:active{
+    color: white;
+    background-color: white;
+    text-decoration: none;
+}
