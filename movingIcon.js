@@ -1,6 +1,6 @@
 var state = {
-    x: 0,
-    y: 0,
+    x: 64,
+    y: 64,
     xVel: 0,
     yVel: 0,
     pressedKeys: {
@@ -29,7 +29,7 @@ function keyup(event) {
 window.addEventListener("keydown", keydown, false)
 window.addEventListener("keyup", keyup, false)
 
-const item = document.getElementById("thingy")
+const item = document.getElementById("moving")
 const speed = 0.25
 
 function update(deltaTime) {
@@ -72,12 +72,11 @@ function update(deltaTime) {
         state.yVel = 0
         state.y = height-64
     }
-    item.style.left = state.x+"px"
-    item.style.top = state.y+"px"
 }
 
 function draw() {
-    // Draw the state of the world
+    item.style.left = state.x+"px"
+    item.style.top = state.y+"px"
 }
 
 function loop(timestamp) {

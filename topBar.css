@@ -1,42 +1,50 @@
-.topbar{
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    padding: 8px;
-    overflow-x: hidden;
-    display: flex;
-    background-color: white;
-    border-width: 8px;
-    border-bottom-style: solid;
-    border-right-style: solid;
-    border-color: black;
-    border-bottom-right-radius: 32px;
-}
-.topbar a{
-    border-radius: 16px;
+#topbar a{
     background-color: black;
-    padding: 8px;
-    margin: 8px;
-    text-align: center;
-    font-size: 32px;
-    font-family: 'Fredoka One', sans-serif;
+    transition: color 0.25s;
 }
-.topbar a:link{
+#topbar a:link{
+    color: white;
+    text-decoration: none;
+    transition: color 0.25s;
+}
+#topbar a:visited{
     color: white;
     text-decoration: none;
 }
-.topbar a:visited{
-    color: white;
-    text-decoration: none;
-}
-.topbar a:hover{
+#topbar a:hover{
     color: black;
     background-color: white;
     text-decoration: none;
 }
-.topbar a:active{
+#topbar a:active{
     color: white;
     background-color: white;
+    transition: color 0s;
     text-decoration: none;
+}
+#topbar{
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    display: flex;
+    width: 100%;
+    background-color: black;
+    filter: drop-shadow(0px 16px 4px black);
+}
+#topbar *{
+    padding-top: 4px;
+    padding-left: 8px;
+    padding-right: 8px;
+    margin: 4px;
+    font-size: 32px;
+    font-family: 'Times New Roman', sans-serif;
+    font-weight: bold;
+}
+#topbar .current{
+    color: white;
+    border-width: 2px;
+    border-style: solid;
+    border-color: white;
 }

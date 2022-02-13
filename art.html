@@ -4,17 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="cat icon.png">
+    <link rel="icon" href="favicon.ico">
     <title>Floof Art</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Spartan&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" type="text/css" href="mainStyle.css">
+    <link rel="stylesheet" type="text/css" href="topBar.css">
+    <link rel="stylesheet" type="text/css" href="scrollPosition.css">
 </head>
 <body>
+    
     <div id="topbar">
         <a href="index.html">
             Home
@@ -25,47 +23,65 @@
         <a href="games.html">
             Games
         </a>
+        <a href="comic.html">
+            Comics
+        </a>
     </div>
-    <div id="mainSection">
-        <img src="cat icon.png" alt="littol cat" class="moving" id="thingy">
+
+    <script src="scrollPosition.js"></script>
+    <p id="scroll_position"></p>
+
+    <div id="title">
         <h1>
-            Art (>v<)
+            <span class="stretch">ART</span>
         </h1>
-        <div class="subSection">
-            <div class="row">
-                <div class="columnFit">
-                    <img src="media/plantet anim.gif" alt="An animation of a girl in a spacesuit watering plants" class="media">
-                </div>
-                <div class="columnFit">
-                    <img src="media/animation test.gif" alt="Spinning character" class="media">
-                </div>
+    </div>
+    <div class="subSection">
+        <h2>
+            <span class="squash">ANIMATION</span>
+        </h2>
+        <div class="row">
+            <div class="column">
+                <img src="media/plantet anim.gif" alt="An animation of a girl in a spacesuit watering plants" class="media">
             </div>
-            <div class="row">
-                <div class="columnFit">
-                    <img src="media/chillin.png" alt="Spinning character" class="media">
-                </div>
-            </div>
-            <div class="row">
-                <div class="columnFit">
-                    <img src="media/animation 8-22-2021.gif" alt="a gif of a flying car" class="media">
-                </div>
-                <div class="columnFit">
-                    <img src="media/ranbdom girl.png" alt="Spinning character" class="media">
-                </div>
-            </div>
-            <div class="row">
-                <div class="column">
-                    <video controls class="media">
-                        <source src="media/vhs mv.mp4" type="video/mp4">
-                    </video>
-                </div>
-            </div>
-            <div class="row">
-                <div class="column">
-                    <img src="media/PonPon.jpg" alt="Spinning character" class="media">
-                </div>
+            <div class="column">
+                <img src="media/animation test.gif" alt="Spinning character" class="media">
             </div>
         </div>
     </div>
-    <script src="script.js"></script>
+    <div class="subSection">
+        <h2>
+            <span class="squash">DRAWINGS</span>
+        </h2>
+        <div class="row">
+            <span class="column">
+                <img src="media/chillin.png" alt="Spinning character" class="media">
+            </span>
+        </div>
+        <div class="row">
+            <span class="unevenColumn">
+                <img src="media/animation 8-22-2021.gif" alt="a gif of a flying car" class="media">
+            </span>
+            <span class="unevenColumn">
+                <img src="media/ranbdom girl.png" alt="Spinning character" class="media">
+            </span>
+        </div>
+        <div class="row">
+            <span class="column">
+                <img src="media/PonPon.jpg" alt="Spinning character" class="media">
+            </span>
+        </div>
+    </div>
+    <div class="subSection">
+        <div class="row">
+            <div class="column">
+                <video controls class="media">
+                    <source src="media/vhs mv.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+        <p>
+            <a href="hypothetical.html" style="text-align: center; margin: auto;">hypothetical?</a>
+        </p>
+    </div>
 </body>

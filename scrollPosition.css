@@ -1,0 +1,8 @@
+#scroll_position {
+    position: fixed;
+    z-index: 128;
+    top: 0;
+    right: 0;
+    padding: 8px;
+    width: 100px;
+  }
