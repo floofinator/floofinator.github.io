@@ -7,19 +7,44 @@
     <link rel="icon" href="favicon.ico">
     <title>Floof Site</title>
 
-    <link rel="stylesheet" type="text/css" href="indexStyle.css">
     <link rel="stylesheet" type="text/css" href="squiggleStyle.css">
+    <link rel="stylesheet" type="text/css" href="mainStyle.css">
 
-    
 </head>
 <body>
-    
-<canvas id="overlay"></canvas>
+
+<section>
+    <div class="gallery">
+        <div class="tall">
+            <img src="media/snail pico cover snail transparent extended.png" style=" object-fit: contain;">
+        </div>
+        <div class="video">
+            <img src="media/plantet anim.gif">
+        </div>
+        <div class="square">
+            <img src="media/PonPon.jpg">
+        </div>
+        <div class="video">
+            <img src="media/animation test.gif">
+        </div>
+        <div class="square">
+            <img src="media/flowers.gif">
+        </div>
+        <div>
+            <img src="media/what.gif">
+        </div>
+    </div>
+</section>
+
+
+<canvas id="squiggleCanvas"></canvas>
 <script src="squiggleOverlay.js"></script>
 <script>
-    drift = 1
-    drag = 0;
+    lines.push(new DriftingLine("white",4,512,2,1.0125,1.5,2.1,0.025));
+    lines.push(new DriftingLine("white",4,512,2,1.0125,2.2,2.2,0.025));
+    lines.push(new DriftingLine("white",4,512,2,1.0125,4.2,5.7,0.025));
 </script>
+
 
 </body>
 </html>
