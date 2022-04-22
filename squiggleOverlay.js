@@ -1,3 +1,7 @@
+/* Luke 'floofinator' Thomson 22-4-21 ᓚᘏᗢ =^-w-^= */
+
+/* perlin noise import*/
+
 function include(file) {
   
     var script  = document.createElement('script');
@@ -10,6 +14,8 @@ function include(file) {
 }
 
 include('https://git.io/perlin.js')
+
+/* funny wiggly lines :^)*/
 
 class Point{
     constructor(x,y){
@@ -50,7 +56,7 @@ class DriftingLine{
         const velocityY = perlin.get(perlinX+0.5,perlinY+0.5)*this.velocity;
         var newPoint = new DriftingPoint(point.x,point.y,velocityX,velocityY);
         this.pointList.push(newPoint);
-        if(this.pointList.length > this.length)
+        while(this.pointList.length > this.length)
             this.pointList.shift();
     }
     drift(){
@@ -87,7 +93,6 @@ var scale = 0.125;
 
 window.onresize = updateOverlaySize;
 window.onmousemove = function(e){mousePoint = new DriftingPoint(e.clientX,e.clientY);};
-window.onmousedown = function(e){updateOverlaySize()};
 
 var lines = [];
 
@@ -105,5 +110,28 @@ function updateOverlay(){
         line.draw();
     });
 }
+
 updateOverlaySize();
+
 var interval = setInterval(updateOverlay,20);
+
+/** view box thingy */
+
+const viewer = document.getElementById("viewer");
+const viewerImage = document.getElementById("viewerImage");
+const full = document.getElementById("full");
+function viewImage(event){
+    console.log(event.target.nodeName);
+    if(event.target.nodeName == "IMG"){
+        viewer.style.display = "block";
+        console.log(event.target.src);
+        viewerImage.src = event.target.src;
+        viewerImage.style.scale = 1.5;
+        full.style.filter = "blur(16px)"
+    }
+}
+
+function closeViewer(){
+    viewer.style.display = "none";
+    full.style.filter = "none";
+}

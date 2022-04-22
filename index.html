@@ -13,37 +13,50 @@
 </head>
 <body>
 
-<section>
+<section id="full">
     <div class="gallery">
         <div class="tall">
-            <img src="media/snail pico cover snail transparent extended.png" style=" object-fit: contain;">
+            <a href="https://floofinator.itch.io/pico-snail">
+                <img src="media/snail pico cover snail transparent extended.png" style=" object-fit: contain;">
+            </a>
         </div>
-        <div class="video">
-            <img src="media/plantet anim.gif">
-        </div>
-        <div class="square">
-            <img src="media/PonPon.jpg">
-        </div>
-        <div class="video">
-            <img src="media/animation test.gif">
+        <div class="landscape">
+            <img src="media/plantet anim.gif" onclick="viewImage(event)">
         </div>
         <div class="square">
-            <img src="media/flowers.gif">
+            <img src="media/PonPon.jpg" onclick="viewImage(event)">
         </div>
-        
-        <div>
-            <img src="media/what.gif">
+        <div class="landscape">
+            <img src="media/animation test.gif" onclick="viewImage(event)">
+        </div>
+        <div class="square">
+            <img src="media/flowers.gif" onclick="viewImage(event)">
+        </div>
+        <div class="thin">
+            <img src="media/what.gif" style="object-fit: cover;" onclick="viewImage(event)">
+        </div>
+        <div class="square">
+            <img src="media/temple.png" onclick="viewImage(event)">
+        </div>
+        <div class="landscape">
+            <img src="media/Snail-spin.gif" onclick="viewImage(event)">
+        </div>
+        <div class="landscape">
+            <img src="media/background test sketch paint.png" onclick="viewImage(event)">
         </div>
     </div>
+    <canvas id="squiggleCanvas"></canvas>
 </section>
 
+<div id="viewer" onclick="closeViewer()">
+    <img id="viewerImage" src="">
+</div>
 
-<canvas id="squiggleCanvas"></canvas>
 <script src="squiggleOverlay.js"></script>
 <script>
-    lines.push(new DriftingLine("white",4,512,2,1.0125,1.5,2.1,0.025));
-    lines.push(new DriftingLine("white",4,512,2,1.0125,2.2,2.2,0.025));
-    lines.push(new DriftingLine("white",4,512,2,1.0125,4.2,5.7,0.025));
+    lines.push(new DriftingLine("white",4,256,2,1.0125,1.5,2.1,0.025));
+    lines.push(new DriftingLine("white",4,256,2,1.0125,2.2,2.2,0.025));
+    lines.push(new DriftingLine("white",4,256,2,1.0125,4.2,5.7,0.025));
 </script>
 
 
