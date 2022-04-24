@@ -32,36 +32,66 @@ section{
     display: grid;
     gap: 32px;
     grid-template-columns: repeat(auto-fit, minmax(64px, 1fr));
+    grid-auto-rows: 64px;
     grid-auto-flow: dense;
 }
 
-.gallery div:nth-of-type(1n){
-    transform: rotate(9deg);
+/*
+.gallery>*{
+    border: solid;
+    border-color: white;
 }
-.gallery div:nth-of-type(2n){
-    transform: rotate(-5deg);
+*/
+
+.gallery>:nth-child(1n){
+    transform: translate(3px,-6px) rotate(1deg);
 }
-.gallery div:nth-of-type(3n){
-    transform: rotate(3deg);
+.gallery>:nth-child(2n){
+    transform: translate(11px,8px) rotate(3deg);
 }
-.gallery div:nth-of-type(4n){
-    transform: rotate(-6deg);
+.gallery>:nth-child(3n){
+    transform: translate(-7px,-2px) rotate(-2deg);
 }
 
 .landscape {
     grid-column: span 3;
     grid-row: span 2;
 }
+.wide-landscape{
+    grid-column: span 4;
+    grid-row: span 2;
+}
+.large-landscape{
+    grid-column: span 4;
+    grid-row: span 3;
+}
+.small-square {
+    grid-column: span 1;
+    grid-row: span 1;
+}
 .square {
     grid-column: span 2;
     grid-row: span 2;
 }
-.tall {
-    grid-column: span 2;
+.medium-square {
+    grid-column: span 3;
+    grid-row: span 3;
+}
+.large-square {
+    grid-column: span 4;
     grid-row: span 4;
 }
-.thin {
+.small-portrait {
+    grid-column: span 1;
     grid-row: span 2;
+}
+.portrait {
+    grid-column: span 2;
+    grid-row: span 3;
+}
+.large-portrait {
+    grid-column: span 3;
+    grid-row: span 5;
 }
 
 ::-webkit-scrollbar {

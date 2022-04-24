@@ -100,9 +100,13 @@ function updateOverlaySize(){
     canvas.width = canvas.clientWidth;
     canvas.height = canvas.clientHeight;
 }
+
+updateOverlaySize();
+
 function clearOverlay(){context.clearRect(0, 0, canvas.width, canvas.height);}
 
 function updateOverlay(){
+    requestAnimationFrame(updateOverlay);
     clearOverlay();
     lines.forEach(line => {
         line.addPoint(mousePoint);
@@ -111,9 +115,7 @@ function updateOverlay(){
     });
 }
 
-updateOverlaySize();
-
-var interval = setInterval(updateOverlay,20);
+updateOverlay();
 
 /** view box thingy */
 
