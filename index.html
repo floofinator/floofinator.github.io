@@ -45,10 +45,14 @@
             <img src="media/snail turn background compressed.gif" onclick="viewImage(event)">
         </div>
         <div class="landscape">
-            <img src="media/animation 12-10-2021.gif" onclick="viewImage(event)">
+            <video autoplay muted loop onclick="viewImage(event)">
+                <source src="media/animation 12-10-2021.mp4" type="video/mp4">
+            </video> 
         </div>
         <div class="large-landscape">
-            <img src="media/animation test.gif" onclick="viewImage(event)">
+            <video autoplay muted loop onclick="viewImage(event)">
+                <source src="media/animation test.mp4" type="video/mp4">
+            </video>
         </div>
         <div class="portrait">
             <img src="media/22-04-15 scan.png" onclick="viewImage(event)">
@@ -57,10 +61,14 @@
             <img src="media/Aggie Ena.png" onclick="viewImage(event)">
         </div>
         <div class="medium-square">
-            <img src="media/animation 8-20-2021.gif" onclick="viewImage(event)">
+            <video autoplay muted loop onclick="viewImage(event)">
+                <source src="media/animation 8-20-2021.mp4" type="video/mp4">
+            </video> 
         </div>
         <div class="wide-landscape">
-            <img src="media/animation 8-22-2021.gif" onclick="viewImage(event)">
+            <video autoplay muted loop onclick="viewImage(event)">
+                <source src="media/animation 8-22-2021.mp4" type="video/mp4">
+            </video> 
         </div>
         <div class="large-landscape">
             <img src="media/background test sketch paint.png" onclick="viewImage(event)">
@@ -142,14 +150,14 @@
 </section>
 
 <div id="viewer" onclick="closeViewer()">
-    <img id="viewerImage" src="">
+
 </div>
 
 <script src="squiggleOverlay.js"></script>
 <script>
-    lines.push(new DriftingLine("white",4,256,2,1.0125,1.5,2.1,0.025));
-    lines.push(new DriftingLine("white",4,256,2,1.0125,2.2,2.2,0.025));
-    lines.push(new DriftingLine("white",4,256,2,1.0125,4.2,5.7,0.025));
+    lines.push(new DriftingLine("#b2d4f7",4,256,2,1.0125,1.5,2.1,0.025));
+    lines.push(new DriftingLine("#fc9cff",4,256,2,1.0125,2.2,2.2,0.025));
+    lines.push(new DriftingLine("#f5d0b5",4,256,2,1.0125,4.2,5.7,0.025));
 </script>
 
 

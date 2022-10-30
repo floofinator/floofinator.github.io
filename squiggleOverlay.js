@@ -120,20 +120,21 @@ updateOverlay();
 /** view box thingy */
 
 const viewer = document.getElementById("viewer");
-const viewerImage = document.getElementById("viewerImage");
 const full = document.getElementById("full");
+
+var currentViewing;
+
 function viewImage(event){
-    console.log(event.target.nodeName);
-    if(event.target.nodeName == "IMG"){
-        viewer.style.display = "block";
-        console.log(event.target.src);
-        viewerImage.src = event.target.src;
-        viewerImage.style.scale = 1.5;
-        full.style.filter = "blur(16px)"
-    }
+    if(currentViewing===event.target) return;
+    viewer.style.display = "block";
+    full.style.filter = "blur(16px)"
+    currentViewing = event.target.cloneNode(true);
+    viewer.appendChild(currentViewing);
+    console.log(currentViewing);
 }
 
 function closeViewer(){
+    currentViewing.remove();
     viewer.style.display = "none";
     full.style.filter = "none";
 }
