@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slot Machine</title>
+</head>
+<body>
+    <Header>
+        <script>
+
+            class SlotMachine
+            {
+                constructor()
+                {
+                    this.lastAmount = 0;
+                    this.numberList = [0,0,0]
+
+                    this.images = []
+
+                    var section = document.createElement('section')
+                    document.body.appendChild(section)
+
+                    for (let i = 0; i < 3; i++) {
+                        var image = new Image(64,64)
+                        section.append(image);
+                        this.images[i] = image;
+                    }
+                    
+                    this.setImages()
+                }
+                play()
+                {
+                    for (let i = 0; i < 3; i++) 
+                    {
+                        this.numberList[i] = this.randomNumber()
+                    }
+                    this.setImages()
+                    this.lastAmount = this.checkWin()
+                }
+                setImages()
+                {
+                    for (let i = 0; i < 3; i++) 
+                    {
+                        this.images[i].src = this.numberList[i] + ".png"
+                        this.images[i].alt = this.numberList[i]
+                    }
+                }
+                checkWin()
+                {
+                    if(this.numberList[0] == 0 && this.numberList[1] == 0 && this.numberList[2] == 0 ) return 14
+                    if(this.numberList[0] == this.numberList[1] && this.numberList[1] == this.numberList[2]) return 7
+                    if(this.numberList[0] == 0 && this.numberList[1] == 0) return 3
+                    if(this.numberList[0] == this.numberList[1]) return 2
+                    if(this.numberList[0] == 0) return 1;
+                    return 0
+                }
+                randomNumber()
+                {
+                    return Math.round(Math.random() * 6)
+                }
+            }
+
+            class Main
+            {
+                constructor()
+                {
+                    this.money = 100
+                    this.slotMachines = [new SlotMachine(),new SlotMachine(),new SlotMachine()]
+                    
+                    var section = document.createElement('section')
+                    this.outputSection = document.body.appendChild(section)
+                    this.moneyDisplay = document.getElementById("money")
+                }
+                playAll()
+                {
+                    if(this.money <= 0)
+                    {
+                        this.output("YOU'RE BROKE!");
+                        return;
+                    }
+                    
+                    this.money -= 1;
+
+                    var sum = 0;
+
+                    this.slotMachines.forEach(slotMachine => {
+                        slotMachine.play()
+                        sum += slotMachine.lastAmount
+                    });
+                    
+                    if(sum > 0) this.output("WINNER!!! " + sum + " MONEYS!!!")
+                    else this.output("FAIL!!")
+                    
+                    this.money += sum;
+
+                    this.moneyDisplay.innerHTML = "Money: " + this.money
+                }
+                output(message)
+                {
+                    this.outputSection.innerHTML = message
+                }
+            }
+
+            </script>
+    </Header>
+
+    <p id="money">Money: 100</p>
+
+    <button onclick="buttonPressed()">PLAY!!!</button>
+
+    <Footer>
+        <script>
+            var main = new Main()
+            
+            function buttonPressed()
+            {
+                main.playAll()
+            }
+        </script>
+    </Footer>
+</body>
+</html>

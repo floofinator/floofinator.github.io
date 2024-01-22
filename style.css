@@ -1,0 +1,302 @@
+:root {
+  --background-img: url("/dithered-image-color.png");
+  --small-gap: 8px;
+  --gap: 16px;
+  --large-gap: 32px;
+  --nav-width: 100px;
+  --nav-height: 2rem;
+}
+
+html {
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+html, body {
+  height: 100vh;
+}
+
+::-moz-scrollbar {
+  width: var(--gap);
+}
+::-moz-scrollbar-thumb {
+  background-color: #963e82;
+}
+
+/* Works on Chrome, Edge, and Safari */
+html::-webkit-scrollbar {
+  width: var(--gap);
+}
+
+html::-webkit-scrollbar-track {
+  background: black;
+}
+
+html::-webkit-scrollbar-thumb {
+  background-color: #963e82;
+}
+
+#scroll-container {
+  overflow: hidden;
+}
+
+#scroll-text {
+  /* animation properties */
+  -moz-transform: translateX(100%);
+  -webkit-transform: translateX(100%);
+  -ms-transform: translateX(100%);
+  transform: translateX(100%);
+  
+  -moz-animation: my-animation 20s linear infinite;
+  -webkit-animation: my-animation 20s linear infinite;
+  animation: my-animation 20s linear infinite;
+  filter: drop-shadow(0px 0px 4px rgba(149,0,255,1));
+  
+  color: black;
+}
+
+@keyframes my-animation {
+  from {
+    -moz-transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+  }
+  to {
+    -moz-transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+  }
+}
+
+html, body, main, section, header, footer, nav, #scroll-container, #frame, #mainFrame {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+#frame {
+ max-width: 1200px;
+ height: 100%;
+ display: flex;
+ margin: auto;
+}
+
+#mainFrame {
+  display: flex;
+  flex: 1;
+  margin: var(--gap);
+}
+
+body {
+  font-family: 'Josefin Sans', sans-serif; 
+  
+}
+
+p{
+  color: white 
+}
+
+header {
+  align-items: center;
+  margin: var(--large-gap);
+  flex-wrap: wrap;
+  max-width: 100%;
+  background-color: black;
+  border-radius: var(--gap);
+}
+
+header p {
+  font-size: 3rem;
+  padding: 0px var(--small-gap);
+  margin: 0px;
+}
+
+header h2 {
+  padding: 0px var(--small-gap);;
+  margin: 0px; 
+}
+
+h1, h2, h3 {
+  font-family: 'Urbanist', sans-serif;
+  background: linear-gradient(35deg, rgba(35,70,164,1) 0%, rgba(149,0,255,1) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+h1 {
+  font-size: 4rem;
+  margin: 0px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 3rem;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+hr {
+  border-style: solid; 
+  border-color: black;
+}
+
+header img{
+  height: 150px;
+  vertical-align: middle;
+}
+
+section {
+  background: rgb(169,187,236);
+  background: linear-gradient(35deg, rgba(169,187,236,1) 0%, rgba(238,227,255,1) 100%);
+  border-radius: var(--gap);
+  padding: var(--gap);
+  margin: var(--gap) 0px;
+}
+
+section p {
+  color: black; 
+}
+
+a{
+  color: #963e82;
+  transition: transform 0.2s, letter-spacing 0.2s;
+}
+
+nav a {
+  border-radius: 8px;
+  text-align: center;
+  background-color: #a9bbec;
+  width: var(--nav-width);
+  height: var(--nav-height);
+  box-sizing: border-box;
+  padding: var(--small-gap);
+  margin: var(--small-gap) 0px;
+  filter: drop-shadow(0px 0px 4px rgba(149,0,255,1));
+  flex: 0;
+}
+
+a:hover{
+  color: white;
+  transform: scale(1.25);
+}
+
+nav a:hover {
+  background-color: #9500ff;
+}
+
+#sticky, nav {
+  width: var(--nav-width);
+}
+
+#sticky {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 8px 0px;
+  margin: 0px;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+}
+
+main {
+  height: 100%;
+  margin: var(--gap);
+  min-width: 0px;
+  flex: 1;
+}
+
+body {
+  background-color: white;
+}
+
+footer {
+  flex-wrap: wrap; 
+  background-color: #2346a4;
+  items-align: top;
+  width: 100%;
+  height: min-content;
+  color: white;
+  border-radius: var(--gap) var(--gap) 0px 0px;
+  padding: var(--gap) var(--gap) var(--large-gap) var(--gap);
+}
+
+footer div {
+  flex: 1;
+}
+
+footer p, footer a {
+  margin: var(--gap);
+}
+
+footer a {
+  display: inline-block;
+  color: white;
+  color: #a9bbec;
+}
+
+.stamp {
+  height: 50px
+}
+
+.ribbon {
+  height: 30px
+}
+
+.button {
+  height: 40px
+}
+
+li {
+  margin: var(--small-gap) 0px;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.wrap {
+ flex-wrap: wrap; 
+}
+
+.rigidFlex {
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+.growFlex {
+  flex-grow: 1; 
+}
+
+.current, .current:hover {
+  background-color: #2346a4;
+  color: white;
+}
+
+@media screen and (max-width: 700px) {
+  #mainFrame {   
+    flex-direction: column;
+  }
+  nav {
+    height: var(--nav-height);
+    width: 100%;
+  }
+  nav a {
+    margin: 0px var(--small-gap);
+    width: var(--nav-width);
+  }
+  #sticky {
+    left: 0px;
+    flex-direction: row;
+    width: 100%;
+  }
+}
