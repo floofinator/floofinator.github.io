@@ -884,7 +884,7 @@
 				this.renderShape.fogStrength = 0;
 				this.renderShape.clipThreshold = 1;
 				this.renderShape.transparent = true;
-				this.renderShape.loadTexture("https://cdn.discordapp.com/attachments/877374980264984588/1098766806463819796/glare.png");
+				this.renderShape.loadTexture("imgs/glare.png");
 
 				Light.lights.push(this);
 			}
@@ -904,7 +904,7 @@
 
 				this.renderShape = new RenderShape(this)
 				this.renderShape.fromOBJ(document.getElementById('floorOBJ').text)
-				this.renderShape.loadTexture("https://cdn.discordapp.com/attachments/877374980264984588/1101280281333334016/TILES01.png");
+				this.renderShape.loadTexture("imgs/TILES01.png");
 
 				this.renderShape.uvScale = [250, 250]
 			}
@@ -918,7 +918,7 @@
 
 				this.renderShape = new RenderShape(this)
 				this.renderShape.fromOBJ(document.getElementById('cubeOBJ').text)
-				this.renderShape.loadTexture("https://cdn.discordapp.com/attachments/877374980264984588/1101191915837341696/textures.png");
+				this.renderShape.loadTexture("imgs/textures.png");
 			}
 		}
 
@@ -941,7 +941,7 @@
 				this.renderShape = new RenderBillboard(this);
 				this.renderShape.lightStrength = 0;
 				this.renderShape.fogStrength = 0;
-				this.renderShape.loadTexture("https://cdn.discordapp.com/attachments/877374980264984588/1098818736250683422/moon.png");
+				this.renderShape.loadTexture("imgs/moon.png");
 
 				this.renderShape.color = [0, 0, 0, 1]
 			}
@@ -954,7 +954,7 @@
 				this.renderShape = new RenderBillboard(this);
 				this.renderShape.lightStrength = 0;
 				this.renderShape.fogStrength = 0;
-				this.renderShape.loadTexture("https://cdn.discordapp.com/attachments/877374980264984588/1098766806463819796/glare.png");
+				this.renderShape.loadTexture("imgs/glare.png");
 
 				this.renderShape.color = [0, 0, 0, 1]
 			}
@@ -967,7 +967,7 @@
 				this.renderShape = new RenderBillboard(this);
 				this.renderShape.lightStrength = 0;
 				this.renderShape.fogStrength = 0;
-				this.renderShape.loadTexture("https://cdn.discordapp.com/attachments/877374980264984588/1098766806463819796/glare.png");
+				this.renderShape.loadTexture("imgs/glare.png");
 
 			}
 			update(delta, time) {
@@ -992,7 +992,7 @@
 				this.renderShape = new RenderBillboard(this);
 				this.renderShape.lightStrength = 0;
 				this.renderShape.fogStrength = 0;
-				this.renderShape.loadTexture("https://cdn.discordapp.com/attachments/877374980264984588/1098766806463819796/glare.png");
+				this.renderShape.loadTexture("imgs/glare.png");
 			}
 			update(delta, time) {
 				super.update(delta, time);
@@ -1039,7 +1039,7 @@
 			constructor() {
 				super();
 				this.renderShape = new RenderBillboard(this);
-				this.renderShape.loadTexture("https://cdn.discordapp.com/attachments/877374980264984588/1101283213890031636/health.png");
+				this.renderShape.loadTexture("imgs/health.png");
 			}
 			onPickUp(player) {
 				player.heal(5)
@@ -1051,7 +1051,7 @@
 			constructor() {
 				super();
 				this.renderShape = new RenderBillboard(this);
-				this.renderShape.loadTexture("https://cdn.discordapp.com/attachments/877374980264984588/1101318355434086500/exit.png");
+				this.renderShape.loadTexture("imgs/exit.png");
 			}
 			onPickUp(player) {
 				super.onPickUp()
@@ -1063,7 +1063,7 @@
 			constructor() {
 				super();
 				this.renderShape = new RenderBillboard(this);
-				this.renderShape.loadTexture("https://cdn.discordapp.com/attachments/877374980264984588/1101283225541808158/ammo.png");
+				this.renderShape.loadTexture("imgs/ammo.png");
 			}
 			onPickUp(player) {
 				player.ammo += 12
@@ -1157,7 +1157,7 @@
 				super();
 
 				this.renderShape = new AnimatedBillboard(this);
-				this.renderShape.loadTexture("https://cdn.discordapp.com/attachments/877374980264984588/1101305651621281922/flower.png");
+				this.renderShape.loadTexture("imgs/flower.png");
 
 				this.health = 2
 
@@ -1192,7 +1192,7 @@
 				super();
 
 				this.renderShape = new AnimatedBillboard(this);
-				this.renderShape.loadTexture("https://cdn.discordapp.com/attachments/877374980264984588/1101245578224074872/enemy1.png");
+				this.renderShape.loadTexture("imgs/enemy1.png");
 
 				this.renderShape.frameRowCol = [3, 3]
 			}
@@ -1217,7 +1217,7 @@
 				super();
 
 				this.renderShape = new AnimatedBillboard(this);
-				this.renderShape.loadTexture("https://media.discordapp.net/attachments/967529266684252171/1101304340892881007/ghost.png");
+				this.renderShape.loadTexture("imgs/enemy1.png");
 
 				this.health = 6
 
