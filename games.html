@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Games - Luke Thomson - Floofinator</title>
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Jua&family=Madimi+One&family=Pompiere&family=Varela+Round&display=swap"
+        rel="stylesheet">
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://cdn.jsdelivr.net/npm/three@0.167.1/build/three.module.js",
+                "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.167.1/examples/jsm/"
+            }
+        }
+    </script>
+    <script defer src="js/sticky.js"></script>
+    <script defer type="module" src="js/background.js"></script>
+</head>
+
+<body>
+    <div id="center-frame">
+        <header>
+            <h1>Floofinator</h1>
+            <h2>Luke Thomson</h2>
+        </header>
+        <div id="content-frame">
+            <nav>
+                <div id="sticky">
+                    <a href="index.html">Index</a>
+                    <a href="about.html">About</a>
+                    <a href="links.html">Links</a>
+                    <a href="games.html" class="current">Games</a>
+                    <a href="projects.html">Projects</a>
+                    <a href="art.html">Art</a>
+                    <a href="comics.html">Comics</a>
+                    <a href="blog.html">Blog</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+            </nav>
+            <main>
+                <h1>Look at These Games You Can Play!</h1>
+                <hr>
+                <section class="grid">
+                    <a class="thumbnail hidden" href="games/pico snail/index.html">
+                        <img src="media/snail pico cover.png" style="box-shadow: none">
+                        <h2>Pico Snail</h2>
+                    </a>
+                    <a class="thumbnail hidden" href="games/snail 3D/snail.html">
+                        <img src="media/platformer snail.png" style="box-shadow: none">
+                        <h2>Platformer</h2>
+                    </a>
+                </section>
+            </main>
+        </div>
+        <footer>
+            <a class="link" href="https://floofinator.neocities.org/">Neocities<img class="icon"
+                src="https://neocities.org/img/cat.png"></a>
+            <a class="link" href="https://floofinator.neocities.org/">Kofi<img class="icon"
+                src="icons/kofi.png"></a>
+            <a class="link" href="https://twitter.com/floofinator7">Twitter<img class="icon"
+                src="icons/twitter.png"></a>
+            <a class="link" href="https://www.youtube.com/@floofinator/">Youtube<img class="icon"
+                src="icons/youtube.png"></a>
+            <a class="link" href="https://floofinator.itch.io/">Itch.io<img class="icon" 
+                src="icons/itchio.png"></a>
+            <a class="link" href="https://floofinator7.newgrounds.com/">Newgrounds<img class="icon"
+                src="icons/newgrounds.png"></a>
+        </footer>
+    </div>
+    <canvas id="background"></canvas>
+</body>
+
+</html>
