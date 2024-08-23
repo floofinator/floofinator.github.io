@@ -252,14 +252,14 @@ p .link {
 
     right: -8px;
 
-    transition: all 0.2s;
+    transition: all 0.5s;
     transition-timing-function: var(--expo-ease);
 
     transform: scale(1.5);
 }
 
 .link:hover .icon {
-    transform: scale(2) translate(2px);
+    transform: scale(1.75) translate(2px) rotate(360deg);
 }
 
 #background {
@@ -464,21 +464,19 @@ li a {
     padding-right: var(--large);
 }
 
-footer a {
-    margin: var(--medium);
+
+li a, footer a {
     padding: var(--small) var(--medium);
     padding-right: var(--very-large);
 }
 
+footer a {
+    margin: var(--medium);
+}
 
-footer .link .icon {
+li .link .icon, footer .link .icon {
     right: 0px;
 }
-
-footer .link:hover .icon {
-    transform: scale(2) translate(4px);
-}
-
 
 .madimi-one-regular {
     font-family: "Madimi One", sans-serif;
