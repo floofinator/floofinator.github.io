@@ -25,19 +25,31 @@ import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
 const scene = new THREE.Scene();
 
-const width = window.innerWidth;
-const height = window.innerHeight;
 var canvas = document.getElementById("background")
 
-const camera = new THREE.PerspectiveCamera(20, width / height, 0.1, 1000);
+var camera = new THREE.PerspectiveCamera(20, 1, 0.1, 1000);
+const renderer = new THREE.WebGLRenderer({ antialias: true, canvas: canvas, alpha: true });
+
+function SetupBackground()
+{
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+    
+    renderer.setSize(width, height);
+    camera.aspect = width / height;
+    camera.updateProjectionMatrix();
+
+    // console.log(camera.aspect);
+}
+
+addEventListener("resize", SetupBackground);
+SetupBackground()
 
 camera.position.y = 5
 camera.position.x = 0
 camera.position.z = 0
 camera.rotateX(-Math.PI * 0.5)
 
-const renderer = new THREE.WebGLRenderer({ antialias: true, canvas: canvas, alpha: true });
-renderer.setSize(width, height);
 renderer.shadowMap.enabled = true;
 renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 
@@ -46,6 +58,7 @@ scene.add(light);
 
 const sunlight = new THREE.DirectionalLight(0xfffced, 1);
 sunlight.castShadow = true;
+
 
 sunlight.position.set(0, 2, 0);
 

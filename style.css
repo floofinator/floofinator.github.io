@@ -37,7 +37,7 @@ section {
 }
 
 *::-webkit-scrollbar {
-    width: var(--medium);
+    width: var(--small);
 }
 
 *::-webkit-scrollbar-track {
@@ -60,6 +60,7 @@ section {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scrollbar-width: auto;
 }
 
 html {
@@ -142,15 +143,12 @@ section {
 
 header {
     padding: var(--medium);
+    width: 100%;
 }
 
 header h1,
 header h2 {
-    letter-spacing: 1rem;
-
-    position: relative;
-    height: max-content;
-    width: max-content;
+    width: 100%;
 
     background: rgb(171,93,201);
     background: linear-gradient(66deg, rgba(171,93,201,1) 12%, rgba(154,181,242,1) 16%, rgba(171,93,201,1) 37%, rgba(207,149,232,1) 41%, rgba(171,93,201,1) 71%, rgba(221,116,220,1) 75%, rgba(171,93,201,1) 100%); 
@@ -186,19 +184,6 @@ header h2 {
         opacity: 1;
         transform: scale(1) rotate(0deg);
     }
-}
-
-
-nav,
-#sticky {
-    height: 100%;
-    width: var(--nav-width);
-    min-width: var(--nav-width);
-}
-
-#sticky {
-    display: flex;
-    flex-direction: column;
 }
 
 p,
@@ -272,7 +257,19 @@ p .link {
     width: 100vw;
     height: 100vh;
     z-index: -1000;
-    /* filter: blur(1px); */
+}
+
+nav,
+#sticky {
+    height: 100%;
+    width: var(--nav-width);
+    min-width: var(--nav-width);
+}
+
+#sticky {
+    display: flex;
+    flex-direction: column;
+    overflow-y: visible;
 }
 
 nav a {
@@ -306,7 +303,7 @@ nav a:hover {
     margin-left: -8px;
 }
 
-.sticking {
+#sticky.sticking {
     position: fixed;
     top: 0;
 }
@@ -328,6 +325,7 @@ nav a:hover {
     }
 
     #sticky {
+        overflow-x: auto;
         flex-direction: row;
     }
 
@@ -344,18 +342,19 @@ nav a:hover {
         margin-top: -16px;
     }
 
-    .sticking a {
+    #sticky.sticking a {
         border-radius: 0px 0px var(--medium) var(--medium);
     }
 
-    .sticking a:hover {
+    #sticky.sticking a:hover {
         margin: 0px var(--small) 0px var(--small);
         padding: 32px var(--medium) 0px var(--medium);
         margin-bottom: -16px;
     }
 
-    .sticking {
+    #sticky.sticking {
         z-index: 100;
+        width: calc(100% - var(--very-large) - var(--medium));
     }
 }
 
@@ -382,8 +381,12 @@ img {
 
 .thumbnail,
 figure {
-    height: 25vh;
-    max-width: 25vh;
+    height: 40vh;
+    width: 25vh;
+    min-height: 200px;
+    max-height: 250px;
+    min-width: 200px;
+    max-width: 220px;
 
     display: flex;
     flex-direction: column;
@@ -429,9 +432,10 @@ figure {
 }
 
 figure {
-    height: 40vh;
+    min-height: 200px;
+    max-height: 400px;
+    min-width: 400px;
     max-width: 500px;
-    min-height: 400px;
 }
 
 figcaption {
