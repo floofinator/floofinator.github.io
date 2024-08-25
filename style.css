@@ -269,7 +269,6 @@ nav,
 #sticky {
     display: flex;
     flex-direction: column;
-    overflow-y: visible;
 }
 
 nav a {
@@ -319,13 +318,14 @@ nav a:hover {
 
     nav,
     #sticky {
-        height: var(--nav-height);
+        height: calc(var(--nav-height) + var(--medium));
         width: 100%;
         flex-shrink: 0;
     }
 
     #sticky {
         overflow-x: auto;
+        overflow-y: hidden;
         flex-direction: row;
     }
 
@@ -339,7 +339,7 @@ nav a:hover {
 
     nav a:hover {
         margin: 0px var(--small) 0px var(--small);
-        margin-top: -16px;
+        margin-top: 0px;
     }
 
     #sticky.sticking a {
@@ -384,9 +384,9 @@ figure {
     height: 40vh;
     width: 25vh;
     min-height: 200px;
-    max-height: 250px;
+    max-height: 225px;
     min-width: 200px;
-    max-width: 220px;
+    max-width: 225px;
 
     display: flex;
     flex-direction: column;
