@@ -196,6 +196,10 @@ figcaption {
     font-style: normal;
 }
 
+p {
+    margin-bottom: var(--medium);
+}
+
 a {
     color: white;
     text-decoration: none;
@@ -307,6 +311,16 @@ nav a:hover {
     top: 0;
 }
 
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
 @media screen and (max-width: 1000px) {
     #content-frame {
         flex-direction: column;
@@ -379,8 +393,7 @@ img {
     border-radius: var(--small);
 }
 
-.thumbnail,
-figure {
+.thumbnail {
     height: 40vh;
     width: 25vh;
     min-height: 200px;
@@ -395,8 +408,6 @@ figure {
 
     align-items: center;
     justify-content: center;
-
-    margin: var(--small);
 }
 
 .thumbnail img {
@@ -432,10 +443,17 @@ figure {
 }
 
 figure {
+    height: 40vh;
     min-height: 200px;
     max-height: 400px;
-    min-width: 400px;
-    max-width: 500px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    margin: var(--small);
 }
 
 figcaption {
@@ -459,17 +477,10 @@ footer {
 
 li {
     padding: 0px;
-    margin: var(--medium);
+    margin: var(--small) var(--medium);
 }
 
-li a {
-    margin: 0px var(--small);
-    padding: var(--small) var(--medium);
-    padding-right: var(--large);
-}
-
-
-li a, footer a {
+footer a {
     padding: var(--small) var(--medium);
     padding-right: var(--very-large);
 }
