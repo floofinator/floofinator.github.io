@@ -1,0 +1,16 @@
+---
+layout: layout.html
+title: Welcome!
+name: Index
+tags: section
+---
+<section class="grid">
+    {% for section in collections.section %}
+    {% if section.url != page.url %}
+    <a class="thumbnail hidden" href="{{ section.url }}">
+        <img src="{{ section.data.thumbnail | default: '/media/background.jpg'}}">
+        <h2>{{ section.data.name }}</h2>
+    </a>
+    {% endif %}
+    {% endfor %}
+</section>

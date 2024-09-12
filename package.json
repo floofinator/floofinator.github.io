@@ -1,0 +1,49 @@
+{
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1"
+  },
+  "name": "floofinator.github.io",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "bcp-47-normalize": "^1.1.1",
+    "chokidar": "^3.6.0",
+    "cross-spawn": "^7.0.3",
+    "debug": "^4.3.6",
+    "dependency-graph": "^0.11.0",
+    "ejs": "^3.1.10",
+    "fast-glob": "^3.3.2",
+    "graceful-fs": "^4.2.11",
+    "gray-matter": "^4.0.3",
+    "hamljs": "^0.6.2",
+    "handlebars": "^4.7.8",
+    "is-glob": "^4.0.3",
+    "iso-639-1": "^2.1.15",
+    "kleur": "^4.1.5",
+    "liquidjs": "^10.16.7",
+    "luxon": "^3.5.0",
+    "markdown-it": "^13.0.2",
+    "micromatch": "^4.0.8",
+    "minimist": "^1.2.8",
+    "moo": "^0.5.2",
+    "multimatch": "^5.0.0",
+    "mustache": "^4.2.0",
+    "normalize-path": "^3.0.0",
+    "nunjucks": "^3.2.4",
+    "path-to-regexp": "^6.2.2",
+    "please-upgrade-node": "^3.2.0",
+    "posthtml": "^0.16.6",
+    "posthtml-urls": "^1.0.0",
+    "pug": "^3.0.3",
+    "recursive-copy": "^2.0.14",
+    "semver": "^7.6.3",
+    "slugify": "^1.6.6"
+  },
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
