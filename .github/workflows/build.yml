@@ -13,8 +13,6 @@ jobs:
       - run: node --version
       - name: Build
         uses: TartanLlama/actions-eleventy@master
-        with:
-          install_dependencies: true
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
