@@ -12,7 +12,7 @@
     --base-highlight: #35cfea;
     --base-faded: #6e58a0;
     --text: rgb(9, 5, 39);
-    --text-highlight: #b964de;
+    --text-highlight: #7611a1;
     --shade-color: rgba(0, 64, 128, 0.5);
     --shade-filter: drop-shadow(-2px 2px 2px var(--shade-color));
     --glow-filter: drop-shadow(0px 0px 8px var(--text-highlight));
@@ -309,7 +309,7 @@ nav a:hover {
 }
 
 .current {
-    background-color: var(--base);
+    background-color: var(--border);
     margin-left: -8px;
 }
 
