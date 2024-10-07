@@ -5,7 +5,11 @@ jobs:
   build_deploy:
     runs-on: ubuntu-18.04
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v4
+      - name: Use Node.js 18
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18.x'
       - name: Build
         uses: TartanLlama/actions-eleventy@master
       - name: Deploy
