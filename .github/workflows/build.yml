@@ -10,7 +10,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '18.0.0'
-      - run: npm –version
+      - run: node --version
       - name: Build
         uses: TartanLlama/actions-eleventy@master
         with:
