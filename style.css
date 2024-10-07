@@ -6,11 +6,12 @@
     --very-large: 48px;
     --nav-height: 50px;
     --nav-width: 100px;
-    --background: #5a2078;
-    --base: #7dc8f0;
+    --background: #402657;
+    --base: #add6ee;
+    --border: #5baedf;
     --base-highlight: #35cfea;
-    --base-faded: #2b71b8;
-    --text: black;
+    --base-faded: #6e58a0;
+    --text: rgb(9, 5, 39);
     --text-highlight: #b964de;
     --shade-color: rgba(0, 64, 128, 0.5);
     --shade-filter: drop-shadow(-2px 2px 2px var(--shade-color));
@@ -102,10 +103,10 @@ main {
     justify-content: center;
 
     height: 100%;
+    width: calc(100% - var(--nav-width));
 
-    background-color: var(--base);
+    background-color: var(--border);
 
-    flex-grow: 1;
     flex-direction: column;
 
     border-radius: var(--small);
@@ -199,7 +200,7 @@ figcaption {
 }
 
 p {
-    margin-bottom: var(--medium);
+    margin: var(--medium) 0px;
 }
 
 a {
@@ -223,6 +224,7 @@ a:hover {
     align-items: center;
     vertical-align: middle;
     width: max-content;
+    max-width: 100%;
 }
 
 .link:hover,
@@ -231,14 +233,19 @@ a:hover {
     background-color: var(--base-highlight);
 }
 
-p .link {
-    padding: 0px var(--small);
+p .link, li .link {
+    padding: var(--very-small) var(--small);
     margin: 0px var(--very-small);
-    padding-right: var(--large);
+    padding-left: var(--large);
+}
+
+li {
+    margin:  var(--very-small) var(--large);
 }
 
 .link .icon {
     position: absolute;
+    left: -8px;
     width: var(--large);
 
     transition: all 0.5s;
@@ -314,11 +321,15 @@ nav a:hover {
 .row {
     display: flex;
     flex-direction: row;
+    max-width: 100%;
 }
 
 .column {
     display: flex;
     flex-direction: column;
+    flex-basis: max-content;
+    flex-shrink: 1;
+    max-width: 100%;
 }
 
 @media screen and (max-width: 1000px) {
@@ -328,6 +339,10 @@ nav a:hover {
 
     .current {
         margin-left: var(--small);
+    }
+
+    main {
+        width: calc(100%);
     }
 
     nav,
@@ -341,6 +356,10 @@ nav a:hover {
         overflow-x: auto;
         overflow-y: hidden;
         flex-direction: row;
+    }
+
+    .row {
+        flex-wrap: wrap;
     }
 
     nav a {
@@ -369,6 +388,7 @@ nav a:hover {
     #sticky.sticking {
         z-index: 100;
         width: calc(100% - var(--very-large) - var(--medium));
+        height: calc(var(--nav-height));
     }
 }
 
@@ -388,6 +408,7 @@ hr {
 img {
     height: 100%;
     width: auto;
+    max-width: 100%;
     object-fit: contain;
     margin: var(--small) auto;
     border-radius: var(--small);
@@ -441,9 +462,12 @@ img {
 }
 
 figure {
-    height: 40vh;
-    min-height: 200px;
-    max-height: 400px;
+    height: auto;
+    min-height: 10vh;
+    max-height: 40vh;
+    width: 40vh;
+    min-width: 30vw;
+    max-width: 100%;
 
     display: flex;
     flex-direction: column;
@@ -465,17 +489,12 @@ footer {
     margin-top: var(--medium);
     border-top-left-radius: var(--medium);
     border-top-right-radius: var(--medium);
-    background-color: var(--base-faded);
+    background-color: var(--border);
     padding: var(--medium);
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     border-bottom-width: 0px;
-}
-
-li {
-    padding: 0px;
-    margin: var(--small) var(--medium);
 }
 
 footer a {
@@ -488,32 +507,8 @@ footer a {
 }
 
 footer .link .icon {
-    left: -12px;
+    left: -8px;
     filter: var(--shade-filter);
-}
-
-.madimi-one-regular {
-    font-family: "Madimi One", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-}
-
-.pompiere-regular {
-    font-family: "Pompiere", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-}
-
-.varela-round-regular {
-    font-family: "Varela Round", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-}
-
-.jua-regular {
-    font-family: "Jua", sans-serif;
-    font-weight: 400;
-    font-style: normal;
 }
 
 h1,
@@ -522,8 +517,9 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: "Madimi One", sans-serif;
+    font-family: "Tilt Warp", sans-serif;
     font-weight: 400;
     font-style: normal;
     letter-spacing: 0.25rem;
+    width: 100%;
 }
