@@ -1,0 +1,145 @@
+---
+title: DigNet
+tags: post
+name: DigNet
+thumbnail: /media/thumbnail/DigNet.png
+---
+<section>
+    <h2>
+        A Voxel Engine In Unity
+    </h2>
+    <div class="row">
+        <div class="column">
+            <p>
+                <br>
+                DigNet is a voxel game made in Unity. Its look and design is intended to match the nostalgia I have
+                for early versions of Minecraft.
+                The project was started in late May 2024 and I decided to put it on my "will finish eventually, maybe,
+                probably, we'll see" shelf in mid July.
+            </p>
+            <p>
+                I knew most of the basic concepts for how a voxel engine can be created and optimized, but decided to
+                follow a
+                short youtube series as a foundation anyway.
+                As I progressed, I took my own liberties to structure the code and project in a way I found to be more
+                understandable.
+            </p>
+            <p>
+                I knew most of the basic concepts for how a voxel engine can be created and optimized, but decided to
+                follow a
+                short youtube series as a foundation anyway.
+                As I progressed, I took my own liberties to structure the code and project in a way I found to be more
+                understandable.
+                <li>
+                    <a class="link"
+                        href="https://www.youtube.com/watch?v=h66IN1Pndd0&list=PLVsTSlfj0qsWEJ-5eMtXsYp03Y9yF1dEn">
+                        <img class="icon" src="/icons/youtube.png">
+                        Make Minecraft in Unity 3D Tutorial
+                    </a>
+                </li>
+            </p>
+        </div>
+        <div class="column">
+            <figure>
+                <img src="/media/dignet/DigNet14.png">
+                <figcaption>A small house at night with light in the dark.</figcaption>
+            </figure>
+        </div>
+    </div>
+    <div class="row">
+        <div class="column">
+            <p>
+                The first steps involved defining the data of the voxels and implementing an algorithm to represent them
+                as a visual.
+                There are a few limitations to consider. These limitations have determined the most common approach to
+                this problem and the approach that games like Minecraft implement.
+            </p>
+            <ul>
+                <li>
+                    Modern GPUs use triangulated meshes to render 3D objects
+                </li>
+                <li>
+                    The number of triangles defined on a mesh has a limit
+                </li>
+                <li>
+                    Triangles that will not be seen are wasted in the mesh
+                </li>
+                <li>
+                    The entirety of a mesh must be updated on the GPU if it changes
+                </li>
+            </ul>
+        </div>
+        <div class="column">
+            <figure>
+                <img style="image-rendering: pixelated;" src="/media/dignet/DigNet1.png">
+                <figcaption>An early visual of the voxel mesh chunks with flat colors.</figcaption>
+            </figure>
+        </div>
+    </div>
+    <div class="row">
+        <div class="column">
+            <p>
+                These limits lead to a concept commonly known as "chunks." The voxel world is split into sections of a
+                constant voxel size.
+                Each chunk has it's own voxel data and a related mesh. When a voxel is changed in a chunk, the mesh
+                change required to represent it can be reduced to the chunk and it's neighboors.
+                Chunks also allow for the loading and unloading of sections as the player moves through the world.
+            </p>
+            <p>
+                The textures were created from real photos cropped and downscaled in a way that tiled well. Any tiling
+                seams were blended using the clone stamp tool.
+            </p>
+        </div>
+        <div class="column">
+            <figure>
+                <img style="image-rendering: pixelated;" src="/media/dignet/atlas.png">
+                <figcaption>The full texture atlas the game currently uses. The voxel face UVs are mapped to this texture.</figcaption>
+            </figure>
+        </div>
+    </div>
+</section>
+
+<section class="grid">
+    <figure>
+        <img src="/media/dignet/DigNet1.png">
+    </figure>
+    <figure>
+        <img src="/media/dignet/DigNet2.png">
+    </figure>
+    <figure>
+        <img src="/media/dignet/DigNet3.png">
+    </figure>
+    <figure>
+        <img src="/media/dignet/DigNet4.png">
+    </figure>
+    <figure>
+        <img src="/media/dignet/DigNet5.png">
+    </figure>
+    <figure>
+        <img src="/media/dignet/DigNet6.png">
+    </figure>
+    <figure>
+        <img src="/media/dignet/DigNet7.png">
+    </figure>
+    <figure>
+        <img src="/media/dignet/DigNet8.png">
+    </figure>
+    <figure>
+        <img src="/media/dignet/DigNet9.png">
+    </figure>
+    <figure>
+        <img src="/media/dignet/DigNet10.png">
+    </figure>
+    <figure>
+        <img src="/media/dignet/DigNet11.png">
+    </figure>
+    <figure>
+        <img src="/media/dignet/DigNet12.png">
+    </figure>
+    <figure>
+        <img src="/media/dignet/DigNet13.png">
+    </figure>
+    <figure>
+        <img src="/media/dignet/DigNet14.png">
+    </figure>
+</section>

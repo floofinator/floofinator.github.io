@@ -53,34 +53,33 @@ camera.rotateX(-Math.PI * 0.5)
 renderer.shadowMap.enabled = true;
 renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 
-const light = new THREE.HemisphereLight(0xfffced, 0x426896, 3);
-scene.add(light);
+// const ambient = new THREE.HemisphereLight(0xfffced, 0x426896, 1);
+// scene.add(ambient);
 
 const sunlight = new THREE.DirectionalLight(0xfffced, 1);
 sunlight.castShadow = true;
-
 
 sunlight.position.set(0, 2, 0);
 
 sunlight.target.position.set(0, 0, 0);
 
-sunlight.shadowCameraNear = 0.001;
-sunlight.shadowCameraFar = 10;
+sunlight.shadow.camera.near = 0.001;
+sunlight.shadow.camera.far = 5;
 
-sunlight.shadowCameraLeft = -5;
-sunlight.shadowCameraRight = 5;
-sunlight.shadowCameraTop = 5;
-sunlight.shadowCameraBottom = -0;
+sunlight.shadow.camera.left = -2;
+sunlight.shadow.camera.right = 2;
+sunlight.shadow.camera.top = 2;
+sunlight.shadow.camera.bottom = -8;
 
 sunlight.shadowCameraVisible = true;
 
-sunlight.shadow.mapSize.set(1024,1024)
+sunlight.shadow.mapSize.set(512,1024)
 
 scene.add(sunlight);
 
 const geometryP = new THREE.PlaneGeometry(10, 10);
 const materialP = new THREE.ShadowMaterial()
-materialP.opacity = 0.5
+materialP.opacity = 1
 const plane = new THREE.Mesh(geometryP, materialP);
 
 plane.position.y = -0.05
@@ -89,13 +88,13 @@ plane.receiveShadow = true;
 plane.rotation.x = -Math.PI / 2;
 scene.add(plane);
 
-const texture = new THREE.TextureLoader().load('../models/texture.png');
+const texture = new THREE.TextureLoader().load('/models/texture.png');
 texture.colorSpace = THREE.SRGBColorSpace;
 texture.flipY = false;
 
 const glftLoader = new GLTFLoader();
 
-const material = new THREE.MeshStandardMaterial({
+const material = new THREE.MeshBasicMaterial({
     map: texture
 });
 
@@ -143,7 +142,7 @@ function loadModel(modelName, parent) {
     {
         console.log("loading new model " + modelName)
 
-        glftLoader.load("../models/" + modelName + ".glb", (glb) => {
+        glftLoader.load("/models/" + modelName + ".glb", (glb) => {
             var model = glb.scene
 
             model.castShadow = true;
