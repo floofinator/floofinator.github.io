@@ -5,6 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ name | default: "Title" }} - Luke Thomson - Floofinator</title>
+
+    <!-- Open Graph Protocal for social media embed -->
+    <meta property="og:title" content="{{ name | default: Title }} - Luke Thomson - Floofinator">
+    <meta property="og:image" content="{{ thumbnail | default: '/media/background.jpg' | url }}" />
+    <meta property="og:image:secure_url" content="{{ thumbnail | default: '/media/background.jpg' | url }}" />
+    <meta property="og:url" content="https://floofinator.com/">
+    <meta property="og:image:type" content="website" />
+    <meta property="og:image:alt" content="Thumbnail" />
+
     <link rel="stylesheet" href="{{ '/style.css' | url }}">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
