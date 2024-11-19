@@ -75,6 +75,10 @@ html {
 
 body {
     min-height: 100%;
+    color: var(--text);
+    font-family: "Varela Round", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
 #center-frame {
@@ -98,6 +102,12 @@ body {
     flex-grow: 1;
 }
 
+@media screen and (max-width: 1000px) {
+    #content-frame {
+        flex-direction: column;
+    }
+}
+
 main {
     display: flex;
     justify-content: center;
@@ -113,6 +123,13 @@ main {
     padding: var(--medium);
 }
 
+@media screen and (max-width: 1000px) {
+    
+    main {
+        width: calc(100%);
+    }
+}
+
 section {
     display: flex;
     flex-flow: wrap;
@@ -120,8 +137,6 @@ section {
 
     background-color: var(--base);
     background-image: var(--aero-flipped-gradient);
-
-    /* width: calc(100% - var(--medium)); */
 
     flex-shrink: 1;
     flex-grow: 1;
@@ -136,9 +151,19 @@ section {
 }
 
 .grid {
+    display: flex;
+    flex-flow: wrap;
+    flex-direction: column;
+
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    
+    margin-top: var(--small);
+    padding: var(--medium);
+
+    flex-shrink: 1;
+    flex-grow: 1;
 
     transition: all 0.2s;
 }
@@ -151,6 +176,8 @@ header {
 header h1,
 header h2 {
     width: 100%;
+    
+    letter-spacing: 0.25rem;
 
     background: rgb(171, 93, 201);
     background: linear-gradient(66deg, rgba(171, 93, 201, 1) 12%, rgba(154, 181, 242, 1) 16%, rgba(171, 93, 201, 1) 37%, rgba(207, 149, 232, 1) 41%, rgba(171, 93, 201, 1) 71%, rgba(221, 116, 220, 1) 75%, rgba(171, 93, 201, 1) 100%);
@@ -187,16 +214,6 @@ header h2 {
         opacity: 1;
         transform: scale(1) rotate(0deg);
     }
-}
-
-p,
-a,
-li,
-figcaption {
-    color: var(--text);
-    font-family: "Varela Round", sans-serif;
-    font-weight: 400;
-    font-style: normal;
 }
 
 p {
@@ -308,59 +325,17 @@ nav a:hover {
     transform: none;
 }
 
-.current {
-    background-color: var(--border);
-    margin-left: -8px;
-}
-
 #sticky.sticking {
     position: fixed;
     top: 0;
 }
 
-.row {
-    display: flex;
-    flex-direction: row;
-    max-width: 100%;
-}
-
-.column {
-    display: flex;
-    flex-direction: column;
-    flex-basis: max-content;
-    flex-shrink: 1;
-    max-width: 100%;
+.current {
+    background-color: var(--border);
+    margin-left: -8px;
 }
 
 @media screen and (max-width: 1000px) {
-    #content-frame {
-        flex-direction: column;
-    }
-
-    .current {
-        margin-left: var(--small);
-    }
-
-    main {
-        width: calc(100%);
-    }
-
-    nav,
-    #sticky {
-        height: calc(var(--nav-height) + var(--medium));
-        width: 100%;
-        flex-shrink: 0;
-    }
-
-    #sticky {
-        overflow-x: auto;
-        overflow-y: hidden;
-        flex-direction: row;
-    }
-
-    .row {
-        flex-wrap: wrap;
-    }
 
     nav a {
         height: auto;
@@ -389,6 +364,48 @@ nav a:hover {
         z-index: 100;
         width: calc(100% - var(--very-large) - var(--medium));
         height: calc(var(--nav-height));
+    }
+    nav,
+    #sticky {
+        height: calc(var(--nav-height) + var(--medium));
+        width: 100%;
+        flex-shrink: 0;
+    }
+    
+    #sticky {
+        overflow-x: auto;
+        overflow-y: hidden;
+        flex-direction: row;
+    }
+
+    .current {
+        margin-left: var(--small);
+    }
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    max-width: 100%;
+}
+
+
+.column {
+    display: flex;
+    flex-direction: column;
+    flex-basis: max-content;
+    flex-shrink: 1;
+    max-width: 100%;
+}
+
+@media screen and (max-width: 1250px) {
+    .row {
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    }
+    .column {
+        width: 100%;
     }
 }
 
@@ -462,12 +479,11 @@ img {
 }
 
 figure {
-    height: auto;
-    min-height: 10vh;
-    max-height: 40vh;
-    width: 40vh;
-    min-width: 30vw;
+    width: fit-content;
+
+    width: 30vw;
     max-width: 100%;
+    min-width: min-content;
 
     display: flex;
     flex-direction: column;
@@ -476,6 +492,24 @@ figure {
     justify-content: center;
 
     margin: var(--small);
+}
+
+figure img
+{
+    height: auto;
+    min-height: 10vh;
+    max-height: 40vh;
+    width: 30vw;
+    min-width: 250px;
+}
+
+figure.small {
+    width: 20vw;
+}
+
+figure.small img{
+    width: 20vw;
+    min-width: 200px;
 }
 
 figcaption {
@@ -520,6 +554,5 @@ h6 {
     font-family: "Tilt Warp", sans-serif;
     font-weight: 400;
     font-style: normal;
-    letter-spacing: 0.25rem;
     width: 100%;
 }
