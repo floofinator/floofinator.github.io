@@ -6,7 +6,7 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy("src/media");
     eleventyConfig.addPassthroughCopy("src/models");
     eleventyConfig.addPassthroughCopy("src/style.css");
-    eleventyConfig.addPassthroughCopy("src/favicon.ico");
+    eleventyConfig.addPassthroughCopy("src/favicon.png");
     eleventyConfig.addPassthroughCopy("src/Resume.pdf");
     eleventyConfig.addPassthroughCopy("CNAME");
     
