@@ -2,7 +2,7 @@
 
 const particleTime = 10
 const particleSize = 0.05
-const particleWait = 0.1
+const particleWait = 0.5
 const particleBaseVelocity = 1.5
 const particleRandomVelocity = 1
 const gravity = 4
