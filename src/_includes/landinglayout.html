@@ -32,7 +32,6 @@
             }
         }
     </script>
-    <script defer src="/js/sticky.js"></script>
     <script defer src="/js/show.js"></script>
     <script defer type="module" src="/js/background.js"></script>
 </head>
@@ -44,18 +43,7 @@
             <h2>Luke Thomson</h2>
         </header>
         <div id="content-frame">
-            <nav>
-                <div id="sticky">
-                    {% for section in collections.section %}
-                    {% if page.url | contains: section.url %}
-                        <a href="{{ section.url }}" class="current">{{ section.data.name }}</a>
-                    {% else %}
-                        <a href="{{ section.url }}">{{ section.data.name }}</a>
-                    {% endif %}
-                    {% endfor %}
-                </div>
-            </nav>
-            <main>
+            <main style="width: 100%;">
                 <h1>{{ title | default: "Title" }}</h1>
                 <hr>
                 {{ content }}
