@@ -46,6 +46,7 @@
         <div id="content-frame">
             <nav>
                 <div id="sticky">
+                    <a href="/index.html">Index</a>
                     {% for section in collections.section %}
                     {% if page.url | contains: section.url %}
                         <a href="{{ section.url }}" class="current">{{ section.data.name }}</a>
