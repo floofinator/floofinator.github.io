@@ -1,0 +1,31 @@
+---
+layout: layout.html
+title: Art
+name: Art
+tags: section
+thumbnail: /media/thumbnail/art.png
+---
+<section class="grid">
+
+    <figure class="hidden">
+        <img src="/media/art/retro.gif">
+        <figcaption>90s anime style test using a snail's house character</figcaption>
+    </figure>
+    <figure class="hidden">
+    <img src="/media/art/Leila Spin.gif">
+        <figcaption>Turn around of a fish character</figcaption>
+    </figure>
+    <figure class="hidden">
+        <img src="/media/art/Paige.gif">
+        <figcaption>Animation of a low poly character with only 1024 tris and 1024x1024 pixel texture.</figcaption>
+    </figure>
+
+    {% for post in collections.art %}
+    {% if post.url != page.url %}
+    <a class="thumbnail hidden" href="{{ post.url }}">
+        <img src="{{ post.data.thumbnail | default: '/media/background.jpg'}}">
+        <h2>{{ post.data.name }}</h2>
+    </a>
+    {% endif %}
+    {% endfor %}
+</section>

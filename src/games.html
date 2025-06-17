@@ -3,31 +3,34 @@ layout: layout.html
 title: Games for You
 name: Games
 tags: section
-thumbnail: /media/snail pico cover.png
+thumbnail: /media/thumbnail/games.png
 ---
 <section class="grid">
+
     <a class="thumbnail hidden" href="https://store.steampowered.com/app/2134320/ENA_Dream_BBQ/">
-        <img src="/media/thumbnail/DreamBBQ.gif">
+        <img src="/media/games/DreamBBQ.gif">
         <h2>ENA: Dream BBQ</h2>
     </a>
+
     <a class="thumbnail hidden" href="https://floofinator.itch.io/pico-snail">
-        <img src="/media/snail pico cover.png">
+        <img src="/media/games/snail pico cover.png">
         <h2>Pico Snail</h2>
     </a>
-    <a class="thumbnail hidden" href="https://floofinator.itch.io/tinker-burrow">
-        <img src="/media/thumbnail/TinkerBurrow.png">
-        <h2>Tinker Burrow</h2>
-    </a>
-    <a class="thumbnail hidden" href="/games/FPSGame.html">
-        <img src="/games/imgs/moon.png">
-        <h2>WebGL FPS (Try Chromium)</h2>
-    </a>
-    <a class="thumbnail hidden" href="https://floofinator.itch.io/dignet-test?password=hidden">
-        <img src="/media/thumbnail/DigNet.png">
-        <h2>DigNet</h2>
-    </a>
     <a class="thumbnail hidden" href="/games/snail 3D/snail.html">
-        <img src="/media/platformer snail.png">
+        <img src="/media/games/platformer snail.png">
         <h2>Test 3D Platformer</h2>
+    </a>
+
+    {% for post in collections.game %}
+    {% if post.url != page.url %}
+    <a class="thumbnail hidden" href="{{ post.url }}">
+        <img src="{{ post.data.thumbnail | default: '/media/background.jpg'}}">
+        <h2>{{ post.data.name }}</h2>
+    </a>
+    {% endif %}
+    {% endfor %}
+    <a class="thumbnail hidden" href="/games/FPS/FPSGame.html">
+        <img src="/games/FPS/imgs/moon.png">
+        <h2>WebGL FPS (Try Chromium)</h2>
     </a>
 </section>

@@ -5,7 +5,7 @@
     --large: 32px;
     --very-large: 48px;
     --nav-height: 50px;
-    --nav-width: 100px;
+    --nav-width: 125px;
     --background: #402657;
     --base: #add6ee;
     --border: #5baedf;
@@ -17,8 +17,9 @@
     --shade-filter: drop-shadow(-2px 2px 2px var(--shade-color));
     --glow-filter: drop-shadow(0px 0px 8px var(--text-highlight));
     --expo-ease: cubic-bezier(0.34, 1.56, 0.64, 1);
-    --aero-gradient: linear-gradient(0deg, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.125) 45%, rgba(255, 255, 255, 0.25) 55%, rgba(255, 255, 255, 0.25) 100%);
-    --aero-flipped-gradient: linear-gradient(0deg, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.125) 100%);
+    --aero-gradient: linear-gradient(0deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.25) 45%, rgba(255, 255, 255, 0.5) 55%, rgba(255, 255, 255, 0.5) 100%);
+    --aero-flipped-gradient: linear-gradient(0deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.25) 100%);
+    --aero-rim: rgba(230, 255, 255, 1)
 }
 
 nav a,
@@ -30,12 +31,12 @@ footer,
 footer a,
 section {
     background-image: var(--aero-gradient);
-    background-blend-mode: overlay;
+    background-blend-mode: soft-light;
 
     border: 2px solid;
-    border-color: rgba(230, 255, 255, 0.5)rgba(230, 255, 255, 0.25) rgba(230, 255, 255, 0.25) rgba(230, 255, 255, 0.5);
+    border-color: var(--aero-rim);
 
-    box-shadow: -2px 2px 4px var(--shade-color);
+    box-shadow: -4px 4px 1px var(--shade-color);
 }
 
 *::-webkit-scrollbar {
@@ -157,12 +158,11 @@ section {
     flex-grow: 1;
 
     border-radius: var(--medium);
-    border-color: rgba(230, 255, 255, 0.25)rgba(230, 255, 255, 0.5) rgba(230, 255, 255, 0.5) rgba(230, 255, 255, 0.25);
 
     margin-top: var(--small);
     padding: var(--medium);
 
-    box-shadow: -2px 2px 8px var(--shade-color) inset;
+    /* box-shadow: -4px 4px 1px var(--shade-color) inset; */
 }
 
 .grid {
@@ -325,7 +325,7 @@ nav a {
     text-align: center;
 
     padding: var(--medium);
-    margin: var(--small) 0px var(--small) 0px;
+    margin: var(--small) 0px var(--small) var(--large);
 
     border-radius: var(--medium) 0px 0px var(--medium);
 
@@ -335,7 +335,7 @@ nav a {
 }
 
 nav a:hover {
-    margin-left: -16px;
+    margin-left: var(--small);
     background-color: var(--base-highlight);
     filter: var(--glow-filter);
 
@@ -349,14 +349,14 @@ nav a:hover {
 
 .current {
     background-color: var(--border);
-    margin-left: -8px;
+    margin-left: var(--medium);
 }
 
 @media screen and (max-width: 1000px) {
 
     nav a {
         height: auto;
-        margin: 0px var(--small) 0px var(--small);
+        margin: var(--large) var(--small) 0px var(--small);
         border-radius: var(--medium) var(--medium) 0px 0px;
         border-bottom-width: 0px;
         border-right-width: 2px;
@@ -364,29 +364,46 @@ nav a:hover {
 
     nav a:hover {
         margin: 0px var(--small) 0px var(--small);
-        margin-top: 0px;
+        margin-top: var(--small);
     }
 
     #sticky.sticking a {
         border-radius: 0px 0px var(--medium) var(--medium);
-    }
-
-    #sticky.sticking a:hover {
-        margin: 0px var(--small) 0px var(--small);
-        padding: 32px var(--medium) 0px var(--medium);
-        margin-bottom: -16px;
+        border-bottom-width: 2px;
+        border-top-width: 0px;
+        margin-top: 0px;
+        margin-bottom: calc(var(--large) + var(--large));
     }
 
     #sticky.sticking {
         z-index: 100;
         width: calc(100% - var(--very-large) - var(--medium));
-        height: calc(var(--nav-height));
     }
+
+    #sticky.sticking a:hover {
+        margin: 0px var(--small) 0px var(--small);
+        padding: 32px var(--medium) 0px var(--medium);
+        margin-bottom: calc(var(--small) + var(--large));
+    }
+
+    .current {
+        margin: 0px var(--small) 0px var(--small);
+        margin-top: calc(var(--medium));
+    }
+
+    #sticky.sticking .current {
+        margin-bottom: calc(var(--medium) + var(--large));
+    }
+
     nav,
     #sticky {
-        height: calc(var(--nav-height) + var(--medium));
+        height: calc(var(--nav-height) + var(--large));
         width: 100%;
         flex-shrink: 0;
+    }
+
+    #sticky.sticking {
+        height: calc(var(--nav-height) + var(--large) + var(--large));
     }
     
     #sticky {
@@ -395,9 +412,6 @@ nav a:hover {
         flex-direction: row;
     }
 
-    .current {
-        margin-left: var(--small);
-    }
 }
 
 .row {
@@ -433,9 +447,9 @@ main h1 {
 
 hr {
     border-color: var(--text);
-    border-color: black;
+    border-color: var(--aero-rim);
     border-style: solid;
-    border-width: 2px;
+    border-width: 1px;
     margin-bottom: var(--medium);
 }
 
