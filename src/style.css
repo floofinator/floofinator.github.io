@@ -118,7 +118,7 @@ h6 {
     flex-grow: 1;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (orientation: portrait) {
     #content-frame {
         flex-direction: column;
     }
@@ -139,7 +139,7 @@ main {
     padding: var(--medium);
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (orientation: portrait) {
     
     main {
         width: calc(100%);
@@ -352,7 +352,7 @@ nav a:hover {
     margin-left: var(--medium);
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (orientation: portrait) {
 
     nav a {
         height: auto;
@@ -407,7 +407,7 @@ nav a:hover {
     }
     
     #sticky {
-        overflow-x: auto;
+        overflow-x: hidden;
         overflow-y: hidden;
         flex-direction: row;
     }
@@ -429,7 +429,7 @@ nav a:hover {
     max-width: 100%;
 }
 
-@media screen and (max-width: 1250px) {
+@media screen and (orientation: portrait) {
     .row {
         flex-wrap: wrap;
         align-items: center;
@@ -510,11 +510,9 @@ img {
 }
 
 figure {
-    width: fit-content;
-
-    width: 30vw;
+    height: min-content;
     max-width: 100%;
-    min-width: min-content;
+    width: min-content;
 
     display: flex;
     flex-direction: column;
@@ -522,26 +520,36 @@ figure {
     align-items: center;
     justify-content: center;
 
-    margin: var(--small);
+    padding: var(--small);
 }
 
-figure img
+figure img,video,iframe
 {
+    /* min-height: 50vh; */
+    /* max-height: 50vh; */
     height: auto;
-    min-height: 10vh;
-    max-height: 40vh;
-    width: 30vw;
-    min-width: 250px;
+    max-height: 50vh;
+    min-width: 30vw;
+    max-width: 100%;
 }
 
-figure.small {
+
+@media screen and (orientation: portrait) {
+
+    figure img,video,iframe
+    {
+        min-width: 60vw;
+    }
+}
+
+/* figure.small {
     width: 20vw;
 }
 
 figure.small img{
     width: 20vw;
     min-width: 200px;
-}
+} */
 
 figcaption {
     text-align: center;
