@@ -529,6 +529,7 @@ figure img,video,iframe
     /* max-height: 50vh; */
     height: auto;
     max-height: 50vh;
+    min-height: 40vh;
     min-width: 30vw;
     max-width: 100%;
 }
