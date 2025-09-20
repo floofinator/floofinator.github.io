@@ -4,7 +4,7 @@ const particleTime = 10
 const particleSize = 0.05
 const particleWait = 0.5
 const particleBaseVelocity = 1.5
-const particleRandomVelocity = 1
+const particleRandomVelocity = 0.25
 const gravity = 4
 const collisionScale = 1.6
 const timeScale = 0.5
@@ -197,6 +197,19 @@ onclick = (event) => {
     createParticle("Candy" + getRandomInt(0, 11), point.x, point.y, point.z, 0)
 };
 
+function easeOutElastic(x) {
+    const c4 = (2.0 * Math.PI) / 3.0;
+
+    return x === 0 ? 0 : x === 1 ? 1 : Math.pow(2.0, -10.0 * x) * Math.sin((x * 10.0 - 0.75) * c4) + 1.0;
+}
+
+function easeInBack(x) {
+    const c1 = 1.70158;
+    const c3 = c1 + 1;
+
+    return c3 * x * x * x - c1 * x * x;
+}
+
 function update() {
     emitTime += deltaTime;
 
@@ -219,7 +232,9 @@ function update() {
             particle.fade -= deltaTime / 0.5
         }
 
-        particle.scale.setScalar(particle.fade * particleSize)
+        var pop_in = (particleTime - particle.timer) / 0.5
+
+        particle.scale.setScalar(particleSize * (pop_in > 1 ? (particle.fade < 1 ? 1.0 - easeInBack(1.0 - particle.fade) : 1) : easeOutElastic(pop_in)))
 
         if (particle.fade < 0) {
             destroyParticle(particle);
